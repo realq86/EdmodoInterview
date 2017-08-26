@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BDCF4391F5236E000DF99DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF4381F5236E000DF99DE /* AppDelegate.swift */; };
+		8BDCF43B1F5236E000DF99DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF43A1F5236E000DF99DE /* ViewController.swift */; };
+		8BDCF43E1F5236E000DF99DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDCF43C1F5236E000DF99DE /* Main.storyboard */; };
+		8BDCF4401F5236E000DF99DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDCF43F1F5236E000DF99DE /* Assets.xcassets */; };
+		8BDCF4431F5236E000DF99DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDCF4411F5236E000DF99DE /* LaunchScreen.storyboard */; };
+		8BDCF44E1F5236E000DF99DE /* EdmodoInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF44D1F5236E000DF99DE /* EdmodoInterviewTests.swift */; };
+		8BDCF4591F5236E000DF99DE /* EdmodoInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF4581F5236E000DF99DE /* EdmodoInterviewUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8BDCF44A1F5236E000DF99DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BDCF42D1F5236E000DF99DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BDCF4341F5236E000DF99DE;
+			remoteInfo = EdmodoInterview;
+		};
+		8BDCF4551F5236E000DF99DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BDCF42D1F5236E000DF99DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BDCF4341F5236E000DF99DE;
+			remoteInfo = EdmodoInterview;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8BDCF4351F5236E000DF99DE /* EdmodoInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EdmodoInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BDCF4381F5236E000DF99DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BDCF43A1F5236E000DF99DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8BDCF43D1F5236E000DF99DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BDCF43F1F5236E000DF99DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BDCF4421F5236E000DF99DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BDCF4441F5236E000DF99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BDCF4491F5236E000DF99DE /* EdmodoInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdmodoInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BDCF44D1F5236E000DF99DE /* EdmodoInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdmodoInterviewTests.swift; sourceTree = "<group>"; };
+		8BDCF44F1F5236E000DF99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BDCF4541F5236E000DF99DE /* EdmodoInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdmodoInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BDCF4581F5236E000DF99DE /* EdmodoInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdmodoInterviewUITests.swift; sourceTree = "<group>"; };
+		8BDCF45A1F5236E000DF99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BDCF4321F5236E000DF99DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDCF4461F5236E000DF99DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDCF4511F5236E000DF99DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BDCF42C1F5236E000DF99DE = {
+			isa = PBXGroup;
+			children = (
+				8BDCF4371F5236E000DF99DE /* EdmodoInterview */,
+				8BDCF44C1F5236E000DF99DE /* EdmodoInterviewTests */,
+				8BDCF4571F5236E000DF99DE /* EdmodoInterviewUITests */,
+				8BDCF4361F5236E000DF99DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BDCF4361F5236E000DF99DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BDCF4351F5236E000DF99DE /* EdmodoInterview.app */,
+				8BDCF4491F5236E000DF99DE /* EdmodoInterviewTests.xctest */,
+				8BDCF4541F5236E000DF99DE /* EdmodoInterviewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BDCF4371F5236E000DF99DE /* EdmodoInterview */ = {
+			isa = PBXGroup;
+			children = (
+				8BDCF4381F5236E000DF99DE /* AppDelegate.swift */,
+				8BDCF43A1F5236E000DF99DE /* ViewController.swift */,
+				8BDCF43C1F5236E000DF99DE /* Main.storyboard */,
+				8BDCF43F1F5236E000DF99DE /* Assets.xcassets */,
+				8BDCF4411F5236E000DF99DE /* LaunchScreen.storyboard */,
+				8BDCF4441F5236E000DF99DE /* Info.plist */,
+			);
+			path = EdmodoInterview;
+			sourceTree = "<group>";
+		};
+		8BDCF44C1F5236E000DF99DE /* EdmodoInterviewTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BDCF44D1F5236E000DF99DE /* EdmodoInterviewTests.swift */,
+				8BDCF44F1F5236E000DF99DE /* Info.plist */,
+			);
+			path = EdmodoInterviewTests;
+			sourceTree = "<group>";
+		};
+		8BDCF4571F5236E000DF99DE /* EdmodoInterviewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8BDCF4581F5236E000DF99DE /* EdmodoInterviewUITests.swift */,
+				8BDCF45A1F5236E000DF99DE /* Info.plist */,
+			);
+			path = EdmodoInterviewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BDCF4341F5236E000DF99DE /* EdmodoInterview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BDCF45D1F5236E000DF99DE /* Build configuration list for PBXNativeTarget "EdmodoInterview" */;
+			buildPhases = (
+				8BDCF4311F5236E000DF99DE /* Sources */,
+				8BDCF4321F5236E000DF99DE /* Frameworks */,
+				8BDCF4331F5236E000DF99DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EdmodoInterview;
+			productName = EdmodoInterview;
+			productReference = 8BDCF4351F5236E000DF99DE /* EdmodoInterview.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8BDCF4481F5236E000DF99DE /* EdmodoInterviewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BDCF4601F5236E000DF99DE /* Build configuration list for PBXNativeTarget "EdmodoInterviewTests" */;
+			buildPhases = (
+				8BDCF4451F5236E000DF99DE /* Sources */,
+				8BDCF4461F5236E000DF99DE /* Frameworks */,
+				8BDCF4471F5236E000DF99DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BDCF44B1F5236E000DF99DE /* PBXTargetDependency */,
+			);
+			name = EdmodoInterviewTests;
+			productName = EdmodoInterviewTests;
+			productReference = 8BDCF4491F5236E000DF99DE /* EdmodoInterviewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8BDCF4531F5236E000DF99DE /* EdmodoInterviewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BDCF4631F5236E000DF99DE /* Build configuration list for PBXNativeTarget "EdmodoInterviewUITests" */;
+			buildPhases = (
+				8BDCF4501F5236E000DF99DE /* Sources */,
+				8BDCF4511F5236E000DF99DE /* Frameworks */,
+				8BDCF4521F5236E000DF99DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BDCF4561F5236E000DF99DE /* PBXTargetDependency */,
+			);
+			name = EdmodoInterviewUITests;
+			productName = EdmodoInterviewUITests;
+			productReference = 8BDCF4541F5236E000DF99DE /* EdmodoInterviewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BDCF42D1F5236E000DF99DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Chi Hwa Michael Ting";
+				TargetAttributes = {
+					8BDCF4341F5236E000DF99DE = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					8BDCF4481F5236E000DF99DE = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 8BDCF4341F5236E000DF99DE;
+					};
+					8BDCF4531F5236E000DF99DE = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 8BDCF4341F5236E000DF99DE;
+					};
+				};
+			};
+			buildConfigurationList = 8BDCF4301F5236E000DF99DE /* Build configuration list for PBXProject "EdmodoInterview" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8BDCF42C1F5236E000DF99DE;
+			productRefGroup = 8BDCF4361F5236E000DF99DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BDCF4341F5236E000DF99DE /* EdmodoInterview */,
+				8BDCF4481F5236E000DF99DE /* EdmodoInterviewTests */,
+				8BDCF4531F5236E000DF99DE /* EdmodoInterviewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BDCF4331F5236E000DF99DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BDCF4431F5236E000DF99DE /* LaunchScreen.storyboard in Resources */,
+				8BDCF4401F5236E000DF99DE /* Assets.xcassets in Resources */,
+				8BDCF43E1F5236E000DF99DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDCF4471F5236E000DF99DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDCF4521F5236E000DF99DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BDCF4311F5236E000DF99DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BDCF43B1F5236E000DF99DE /* ViewController.swift in Sources */,
+				8BDCF4391F5236E000DF99DE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDCF4451F5236E000DF99DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BDCF44E1F5236E000DF99DE /* EdmodoInterviewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDCF4501F5236E000DF99DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BDCF4591F5236E000DF99DE /* EdmodoInterviewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8BDCF44B1F5236E000DF99DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BDCF4341F5236E000DF99DE /* EdmodoInterview */;
+			targetProxy = 8BDCF44A1F5236E000DF99DE /* PBXContainerItemProxy */;
+		};
+		8BDCF4561F5236E000DF99DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BDCF4341F5236E000DF99DE /* EdmodoInterview */;
+			targetProxy = 8BDCF4551F5236E000DF99DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8BDCF43C1F5236E000DF99DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BDCF43D1F5236E000DF99DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8BDCF4411F5236E000DF99DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BDCF4421F5236E000DF99DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8BDCF45B1F5236E000DF99DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8BDCF45C1F5236E000DF99DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8BDCF45E1F5236E000DF99DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SDHBMW8ZGY;
+				INFOPLIST_FILE = EdmodoInterview/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.detour.EdmodoInterview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8BDCF45F1F5236E000DF99DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SDHBMW8ZGY;
+				INFOPLIST_FILE = EdmodoInterview/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.detour.EdmodoInterview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8BDCF4611F5236E000DF99DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SDHBMW8ZGY;
+				INFOPLIST_FILE = EdmodoInterviewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.detour.EdmodoInterviewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EdmodoInterview.app/EdmodoInterview";
+			};
+			name = Debug;
+		};
+		8BDCF4621F5236E000DF99DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SDHBMW8ZGY;
+				INFOPLIST_FILE = EdmodoInterviewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.detour.EdmodoInterviewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EdmodoInterview.app/EdmodoInterview";
+			};
+			name = Release;
+		};
+		8BDCF4641F5236E000DF99DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = SDHBMW8ZGY;
+				INFOPLIST_FILE = EdmodoInterviewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.detour.EdmodoInterviewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EdmodoInterview;
+			};
+			name = Debug;
+		};
+		8BDCF4651F5236E000DF99DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = SDHBMW8ZGY;
+				INFOPLIST_FILE = EdmodoInterviewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.detour.EdmodoInterviewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EdmodoInterview;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BDCF4301F5236E000DF99DE /* Build configuration list for PBXProject "EdmodoInterview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BDCF45B1F5236E000DF99DE /* Debug */,
+				8BDCF45C1F5236E000DF99DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BDCF45D1F5236E000DF99DE /* Build configuration list for PBXNativeTarget "EdmodoInterview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BDCF45E1F5236E000DF99DE /* Debug */,
+				8BDCF45F1F5236E000DF99DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8BDCF4601F5236E000DF99DE /* Build configuration list for PBXNativeTarget "EdmodoInterviewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BDCF4611F5236E000DF99DE /* Debug */,
+				8BDCF4621F5236E000DF99DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8BDCF4631F5236E000DF99DE /* Build configuration list for PBXNativeTarget "EdmodoInterviewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BDCF4641F5236E000DF99DE /* Debug */,
+				8BDCF4651F5236E000DF99DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BDCF42D1F5236E000DF99DE /* Project object */;
+}
