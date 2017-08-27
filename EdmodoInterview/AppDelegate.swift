@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let rootVC = self.window?.rootViewController as! AssignmentsList
+        
+        var mockModels = [Model]()
+        for _ in 0..<10 {
+            mockModels.append(Model())
+        }
+        
+        rootVC.viewModel = TableViewModel(models: mockModels)
+        
         return true
     }
 
