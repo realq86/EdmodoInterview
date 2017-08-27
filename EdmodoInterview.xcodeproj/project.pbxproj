@@ -10,13 +10,14 @@
 		8BBBD25A1F523A30005A7253 /* DataBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD2581F5239BB005A7253 /* DataBinder.swift */; };
 		8BBBD25B1F523A30005A7253 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD2591F5239BB005A7253 /* TableViewModel.swift */; };
 		8BBBD25C1F523A30005A7253 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD2561F5239B3005A7253 /* TableViewCell.swift */; };
+		8BBBD25E1F5249CC005A7253 /* EdmodoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD25D1F5249CC005A7253 /* EdmodoServer.swift */; };
 		8BDCF4391F5236E000DF99DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF4381F5236E000DF99DE /* AppDelegate.swift */; };
 		8BDCF43E1F5236E000DF99DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDCF43C1F5236E000DF99DE /* Main.storyboard */; };
 		8BDCF4401F5236E000DF99DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDCF43F1F5236E000DF99DE /* Assets.xcassets */; };
 		8BDCF4431F5236E000DF99DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDCF4411F5236E000DF99DE /* LaunchScreen.storyboard */; };
 		8BDCF44E1F5236E000DF99DE /* EdmodoInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF44D1F5236E000DF99DE /* EdmodoInterviewTests.swift */; };
 		8BDCF4591F5236E000DF99DE /* EdmodoInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF4581F5236E000DF99DE /* EdmodoInterviewUITests.swift */; };
-		8BDCF4711F5237DF00DF99DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF4701F5237DE00DF99DE /* ViewController.swift */; };
+		8BDCF4711F5237DF00DF99DE /* AssignmentsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF4701F5237DE00DF99DE /* AssignmentsListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		8BBBD2561F5239B3005A7253 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8BBBD2581F5239BB005A7253 /* DataBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinder.swift; sourceTree = "<group>"; };
 		8BBBD2591F5239BB005A7253 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		8BBBD25D1F5249CC005A7253 /* EdmodoServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdmodoServer.swift; sourceTree = "<group>"; };
 		8BDCF4351F5236E000DF99DE /* EdmodoInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EdmodoInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDCF4381F5236E000DF99DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BDCF43D1F5236E000DF99DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +54,7 @@
 		8BDCF4541F5236E000DF99DE /* EdmodoInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdmodoInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDCF4581F5236E000DF99DE /* EdmodoInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdmodoInterviewUITests.swift; sourceTree = "<group>"; };
 		8BDCF45A1F5236E000DF99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BDCF4701F5237DE00DF99DE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../TableViewProgrammaticallySwift/TableViewProgrammaticallySwift/ViewControllers/ViewController.swift; sourceTree = "<group>"; };
+		8BDCF4701F5237DE00DF99DE /* AssignmentsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssignmentsListVC.swift; path = ../../TableViewProgrammaticallySwift/TableViewProgrammaticallySwift/ViewControllers/AssignmentsListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +122,11 @@
 		8BDCF4371F5236E000DF99DE /* EdmodoInterview */ = {
 			isa = PBXGroup;
 			children = (
+				8BBBD25D1F5249CC005A7253 /* EdmodoServer.swift */,
 				8BBBD2571F5239BB005A7253 /* ViewModels */,
 				8BBBD2551F5239B3005A7253 /* TableViewCells */,
 				8BDCF4381F5236E000DF99DE /* AppDelegate.swift */,
-				8BDCF4701F5237DE00DF99DE /* ViewController.swift */,
+				8BDCF4701F5237DE00DF99DE /* AssignmentsListVC.swift */,
 				8BDCF43C1F5236E000DF99DE /* Main.storyboard */,
 				8BDCF43F1F5236E000DF99DE /* Assets.xcassets */,
 				8BDCF4411F5236E000DF99DE /* LaunchScreen.storyboard */,
@@ -284,7 +287,8 @@
 				8BBBD25A1F523A30005A7253 /* DataBinder.swift in Sources */,
 				8BBBD25B1F523A30005A7253 /* TableViewModel.swift in Sources */,
 				8BBBD25C1F523A30005A7253 /* TableViewCell.swift in Sources */,
-				8BDCF4711F5237DF00DF99DE /* ViewController.swift in Sources */,
+				8BDCF4711F5237DF00DF99DE /* AssignmentsListVC.swift in Sources */,
+				8BBBD25E1F5249CC005A7253 /* EdmodoServer.swift in Sources */,
 				8BDCF4391F5236E000DF99DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

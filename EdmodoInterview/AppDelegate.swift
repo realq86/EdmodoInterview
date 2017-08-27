@@ -17,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let rootVC = self.window?.rootViewController as! AssignmentsList
+//        EdmodoServer.shared.getAssignments { (response, error) in
+//            
+//        }
+        
+        let rootVC = self.window?.rootViewController as! AssignmentsListVC
         
         var mockModels = [Model]()
         for _ in 0..<10 {
