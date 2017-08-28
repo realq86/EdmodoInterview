@@ -51,8 +51,25 @@ protocol AssignmentModelProtocol {
     var dueAt: Date { get }
 }
 
-class Model {
+class TableCellViewModel: TableCellViewModelProtocol {
     
+    var mainText: String {
+        get {
+            return self.model.title
+        }
+    }
     
+    var subText: String {
+        get {
+            print("Date description is ")
+            return self.model.dueAt.description
+        }
+    }
     
+    var model: AssignmentModelProtocol!
+    init(model:AssignmentModelProtocol) {
+        self.model = model
+    }
+    
+    let placeHolder = "PLACEHOLDER"
 }
