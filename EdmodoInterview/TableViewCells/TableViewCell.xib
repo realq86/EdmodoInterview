@@ -32,13 +32,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="DUE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71a-FL-uy7">
+                        <rect key="frame" x="291.5" y="13" width="30.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.73333333329999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
+                    <constraint firstItem="og8-cI-8Bg" firstAttribute="leading" secondItem="71a-FL-uy7" secondAttribute="trailing" constant="10" id="3Ww-Gv-Kml"/>
                     <constraint firstItem="7QB-Ab-A6C" firstAttribute="baseline" secondItem="og8-cI-8Bg" secondAttribute="baseline" id="CLy-A3-FGw"/>
                     <constraint firstItem="7QB-Ab-A6C" firstAttribute="leading" secondItem="VWR-Tq-3e6" secondAttribute="leading" constant="10" id="KOD-vl-dxY"/>
                     <constraint firstAttribute="trailing" secondItem="og8-cI-8Bg" secondAttribute="trailing" constant="10" id="TJW-tm-Nli"/>
-                    <constraint firstItem="og8-cI-8Bg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7QB-Ab-A6C" secondAttribute="trailing" constant="30" id="aQV-VM-0Hw"/>
+                    <constraint firstItem="71a-FL-uy7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7QB-Ab-A6C" secondAttribute="trailing" constant="30" id="VsV-bE-5mK"/>
+                    <constraint firstItem="71a-FL-uy7" firstAttribute="baseline" secondItem="og8-cI-8Bg" secondAttribute="baseline" id="d5r-KW-ph0"/>
                     <constraint firstItem="7QB-Ab-A6C" firstAttribute="top" secondItem="VWR-Tq-3e6" secondAttribute="top" constant="10" id="tHm-VY-A2p"/>
                     <constraint firstAttribute="bottom" secondItem="7QB-Ab-A6C" secondAttribute="bottom" constant="10" id="vwj-ny-XZ6"/>
                 </constraints>
