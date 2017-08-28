@@ -25,9 +25,14 @@ extension TableCellViewModelProtocol {
 
 class TableViewCell: UITableViewCell {
     
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subTitleLabel: UILabel!
+    
+    
     var viewModel:TableCellViewModelProtocol! {
         didSet {
-            self.textLabel?.text = viewModel.placeHolder
+            self.titleLabel?.text = viewModel.mainText
+            self.subTitleLabel?.text = viewModel.subText
         }
     }
     
@@ -40,6 +45,11 @@ class TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        self.textLabel?.text = ""
+        self.detailTextLabel?.text = ""
     }
 
 }
