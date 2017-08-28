@@ -46,6 +46,10 @@ class TableCellViewModel: TableCellViewModelProtocol {
     let placeHolder = "PLACEHOLDER"
 }
 
+protocol AssignmentModelProtocol {
+    var title: String { get }
+    var dueAt: Date { get }
+}
 
 class Model {
     
