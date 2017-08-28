@@ -30,8 +30,8 @@ struct Assignment: AssignmentModelProtocol {
     var dueAt: Date
     {
         get {
-            if let dateString = json["due_at"] as? String, let date = dateFormatter.date(from: dateString) {
-                print("date is \(date)")
+            if let dateString = json["due_at"] as? String, let date = serverDateFormatter.date(from: dateString) {
+//                print("date is \(date)")
                 return date
             }
             return Date.distantFuture
