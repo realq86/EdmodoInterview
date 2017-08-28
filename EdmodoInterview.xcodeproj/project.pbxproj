@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B2F50B11F53CC7E00E52CD3 /* AssignmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F50B01F53CC7E00E52CD3 /* AssignmentModel.swift */; };
 		8B2F50B31F53D6A400E52CD3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F50B21F53D6A400E52CD3 /* TableViewCell.xib */; };
+		8B4076441F54E1500069C0E5 /* AssignmentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4076431F54E1500069C0E5 /* AssignmentDetailVC.swift */; };
 		8BBBD25A1F523A30005A7253 /* DataBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD2581F5239BB005A7253 /* DataBinder.swift */; };
 		8BBBD25B1F523A30005A7253 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD2591F5239BB005A7253 /* TableViewModel.swift */; };
 		8BBBD25C1F523A30005A7253 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD2561F5239B3005A7253 /* TableViewCell.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		8B2F50B01F53CC7E00E52CD3 /* AssignmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentModel.swift; sourceTree = "<group>"; };
 		8B2F50B21F53D6A400E52CD3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		8B4076431F54E1500069C0E5 /* AssignmentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDetailVC.swift; sourceTree = "<group>"; };
 		8BBBD2561F5239B3005A7253 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8BBBD2581F5239BB005A7253 /* DataBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinder.swift; sourceTree = "<group>"; };
 		8BBBD2591F5239BB005A7253 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
@@ -58,7 +60,7 @@
 		8BDCF4541F5236E000DF99DE /* EdmodoInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdmodoInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDCF4581F5236E000DF99DE /* EdmodoInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdmodoInterviewUITests.swift; sourceTree = "<group>"; };
 		8BDCF45A1F5236E000DF99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BDCF4701F5237DE00DF99DE /* AssignmentsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssignmentsListVC.swift; path = ../../TableViewProgrammaticallySwift/TableViewProgrammaticallySwift/ViewControllers/AssignmentsListVC.swift; sourceTree = "<group>"; };
+		8BDCF4701F5237DE00DF99DE /* AssignmentsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B4076451F54E1550069C0E5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8BDCF4701F5237DE00DF99DE /* AssignmentsListVC.swift */,
+				8B4076431F54E1500069C0E5 /* AssignmentDetailVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		8BBBD2551F5239B3005A7253 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,8 +142,8 @@
 				8B2F50B01F53CC7E00E52CD3 /* AssignmentModel.swift */,
 				8BBBD2571F5239BB005A7253 /* ViewModels */,
 				8BBBD2551F5239B3005A7253 /* TableViewCells */,
+				8B4076451F54E1550069C0E5 /* ViewControllers */,
 				8BDCF4381F5236E000DF99DE /* AppDelegate.swift */,
-				8BDCF4701F5237DE00DF99DE /* AssignmentsListVC.swift */,
 				8BDCF43C1F5236E000DF99DE /* Main.storyboard */,
 				8BDCF43F1F5236E000DF99DE /* Assets.xcassets */,
 				8BDCF4411F5236E000DF99DE /* LaunchScreen.storyboard */,
@@ -291,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4076441F54E1500069C0E5 /* AssignmentDetailVC.swift in Sources */,
 				8BBBD25A1F523A30005A7253 /* DataBinder.swift in Sources */,
 				8BBBD25B1F523A30005A7253 /* TableViewModel.swift in Sources */,
 				8BBBD25C1F523A30005A7253 /* TableViewCell.swift in Sources */,

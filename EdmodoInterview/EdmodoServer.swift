@@ -33,7 +33,7 @@ class EdmodoServer {
 }
 
 extension EdmodoServer {
-    typealias GetAssignmentsResponse = ([Assignment], Error?) -> Void
+    typealias GetAssignmentsResponse = ([AssignmentModelProtocol], Error?) -> Void
     
     func getAssignments(page:Int, perPage:Int, completion: @escaping GetAssignmentsResponse) {
         
@@ -52,8 +52,8 @@ extension EdmodoServer {
                 completion(assignments, error)
             }
             do {
-                if let data = data, let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue:0)) as? AnyObject {
-                    
+                if let data = data  {
+                    let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue:0)) as AnyObject
                     print(jsonResponse)
                     
                     assignments = createModel(responses: jsonResponse)
@@ -79,7 +79,7 @@ fileprivate func createModel(responses:AnyObject) -> [Assignment]{
         else { return assignments}
     
     for eachResponse in responseArray {
-        var assignment = Assignment(json: eachResponse)
+        let assignment = Assignment(json: eachResponse)
         assignments.append(assignment)
     }
     

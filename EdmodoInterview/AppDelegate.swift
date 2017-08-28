@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        let rootVC = self.window?.rootViewController as! AssignmentsListVC
+        let rootNaviVC = self.window?.rootViewController as! UINavigationController
         
 /* UnComment below for dry data testing */
 //        var mockModels = [Assignment]()
@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
 //        rootVC.viewModel = TableViewModel(models: mockModels)
         
+        let rootVC = rootNaviVC.viewControllers[0] as! AssignmentsListVC
         rootVC.viewModel = TableViewModel(dataProvider: EdmodoServer.shared)
         
         return true
