@@ -10,8 +10,18 @@ import UIKit
 
 protocol TableCellViewModelProtocol {
     var placeHolder:String { get }
+    var mainText: String { get }
+    var subText: String { get }
 }
 
+extension TableCellViewModelProtocol {
+    
+    var placeHolder: String {
+        get {
+            return "Place_Holder"
+        }
+    }
+}
 
 class TableViewCell: UITableViewCell {
     
