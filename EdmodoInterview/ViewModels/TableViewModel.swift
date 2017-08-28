@@ -8,6 +8,8 @@
 
 import Foundation
 
+let kMockNetworkDelaySec: Double = 5
+
 class TableViewModel: TableViewModelProtocol {
     
     fileprivate var dataProvider: EdmodoServer!
@@ -44,13 +46,14 @@ class TableViewModel: TableViewModelProtocol {
     
     func fetchFreshModel(ifError: @escaping (Bool)->Void) {
         dataProvider.getAssignments(page: 1, perPage: 10) { (assignments, error) in
-            
-            if error != nil {
-                ifError(true)
-                return
-            }
-            ifError(false)
-            self.models = assignments
+            DispatchQueue.main.asyncAfter(deadline: .now()+kMockNetworkDelaySec, execute: { [weak self] in
+                if error != nil {
+                    ifError(true)
+                    return
+                }
+                ifError(false)
+                self?.models = assignments
+            })
         }
     }
 }
@@ -70,8 +73,9 @@ class TableCellViewModel: TableCellViewModelProtocol {
     
     var subText: String {
         get {
-            print("Date description is ")
-            return self.model.dueAt.description
+            let displayDate = viewDateFormatter.string(from: self.model.dueAt)
+            print("Date description is \(displayDate)")
+            return displayDate
         }
     }
     
