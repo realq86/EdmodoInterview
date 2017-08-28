@@ -8,7 +8,7 @@
 
 import Foundation
 
-let kMockNetworkDelaySec: Double = 5
+let kMockNetworkDelaySec: Double = 1
 
 class TableViewModel: TableViewModelProtocol {
     
@@ -23,6 +23,8 @@ class TableViewModel: TableViewModelProtocol {
             dataBackArray.value = tempArray
         }
     }
+    var isLoadingData = DataBinder(value: false)
+    fileprivate var currentPage = 1
     
     //Designated Init
     init(dataProvider: EdmodoServer) {
@@ -45,14 +47,19 @@ class TableViewModel: TableViewModelProtocol {
     }
     
     func fetchFreshModel(ifError: @escaping (Bool)->Void) {
-        dataProvider.getAssignments(page: 1, perPage: 10) { (assignments, error) in
+        
+        isLoadingData.value = true
+        
+        dataProvider.getAssignments(page: currentPage, perPage: 1) { (assignments, error) in
             DispatchQueue.main.asyncAfter(deadline: .now()+kMockNetworkDelaySec, execute: { [weak self] in
                 if error != nil {
                     ifError(true)
                     return
                 }
                 ifError(false)
-                self?.models = assignments
+                self?.models.append(contentsOf: (assignments as [AssignmentModelProtocol]))
+                self?.currentPage += 1
+                self?.isLoadingData.value = false
             })
         }
     }
