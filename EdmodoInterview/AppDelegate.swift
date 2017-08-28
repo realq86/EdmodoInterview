@@ -17,18 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        EdmodoServer.shared.getAssignments { (response, error) in
-//            
-//        }
         
         let rootVC = self.window?.rootViewController as! AssignmentsListVC
         
-        var mockModels = [Model]()
-        for _ in 0..<10 {
-            mockModels.append(Model())
-        }
+/* UnComment below for dry data testing */
+//        var mockModels = [Assignment]()
+//        for _ in 0..<10 {
+//            mockModels.append(Assignment())
+//        }
+//        rootVC.viewModel = TableViewModel(models: mockModels)
         
-        rootVC.viewModel = TableViewModel(models: mockModels)
+        rootVC.viewModel = TableViewModel(dataProvider: EdmodoServer.shared)
         
         return true
     }
