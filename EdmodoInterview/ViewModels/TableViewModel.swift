@@ -10,40 +10,49 @@ import Foundation
 
 class TableViewModel: TableViewModelProtocol {
     
+    fileprivate var dataProvider: EdmodoServer!
     var dataBackArray: DataBinder<[TableCellViewModelProtocol]>
-    var models: [Model]! {
+    fileprivate var models: [AssignmentModelProtocol]! {
         didSet {
-            
             var tempArray = [TableCellViewModel]()
             for model in models {
                 tempArray.append(TableCellViewModel(model: model))
             }
-            
             dataBackArray.value = tempArray
         }
     }
     
-    init(models: [Model]?) {
+    //Designated Init
+    init(dataProvider: EdmodoServer) {
+        self.dataProvider = dataProvider
         self.dataBackArray = DataBinder(value: [TableCellViewModel]())
-        
+        self.models = [AssignmentModelProtocol]()
+    }
+    
+    //Init for mock testing
+    convenience init(mockModels: [AssignmentModelProtocol]?) {
+        self.init(dataProvider: EdmodoServer())
+        self.dataBackArray = DataBinder(value: [TableCellViewModel]())
         if let models = models {
             setModel(models)
         }
     }
     
-    func setModel(_ models: [Model]) {
+    fileprivate func setModel(_ models: [AssignmentModelProtocol]) {
         self.models = models
     }
-}
-
-class TableCellViewModel: TableCellViewModelProtocol {
     
-    var model: Model!
-    init(model:Model) {
-        self.model = model
+    func fetchFreshModel(ifError: @escaping (Bool)->Void) {
+        dataProvider.getAssignments(page: 1, perPage: 10) { (assignments, error) in
+            
+            if error != nil {
+                ifError(true)
+                return
+            }
+            ifError(false)
+            self.models = assignments
+        }
     }
-    
-    let placeHolder = "PLACEHOLDER"
 }
 
 protocol AssignmentModelProtocol {
