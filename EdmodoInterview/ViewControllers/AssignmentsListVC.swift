@@ -80,7 +80,7 @@ extension AssignmentsListVC {
         tableView.rowHeight = UITableViewAutomaticDimension
         let nib = UINib(nibName: kTableViewCell, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: kTableViewCell)
-        tableView.backgroundColor = .black
+//        tableView.backgroundColor = .black
         
         return tableView
     }
@@ -124,7 +124,7 @@ extension AssignmentsListVC {
         
         let assignment = sender as! Assignment
         
-        let assignmentDetailVC = segue.destination as! AssignmentDetailVC
+        let assignmentDetailVC = segue.destination as! SubmissionListVC
         
         assignmentDetailVC.viewModel = DetailViewModel(dataProvider: EdmodoServer.shared, assignment: assignment)
         

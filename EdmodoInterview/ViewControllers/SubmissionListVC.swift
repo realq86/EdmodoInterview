@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssignmentDetailVC: AssignmentsListVC {
+class SubmissionListVC: AssignmentsListVC {
     
     let kSubmissionCell = "SubmissionCell"
     let kSubmissionContentCell = "SubmissionContentCell"
@@ -31,7 +31,7 @@ class AssignmentDetailVC: AssignmentsListVC {
     }
 }
 
-extension AssignmentDetailVC {
+extension SubmissionListVC {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -61,5 +61,17 @@ extension AssignmentDetailVC {
             cell.viewModel = viewModels[indexPath.row]
             return cell
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let submission = viewModel.modelAt(indexPath.row) as? Submission {
+            performSegue(withIdentifier: "SegueToSubmissionDetail", sender: submission)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! SubmissionDetail
+        destination.submission = sender as! Submission
     }
 }
