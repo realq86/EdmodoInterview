@@ -37,6 +37,23 @@ struct Assignment: AssignmentModelProtocol {
             return Date.distantFuture
         }
     }
+    var creator: [String: AnyObject] {
+        get {
+            return json["creator"] as? [String:AnyObject] ?? [String:AnyObject]()
+        }
+    }
+    
+    var creatorID: Int {
+        get {
+            return creator["id"] as? Int ?? 0
+        }
+    }
+    
+    var content: String {
+        get {
+            return json["description"] as? String ?? "default_description"
+        }
+    }
     
     init(json:[String:AnyObject]) {
         self.json = json
@@ -46,3 +63,5 @@ struct Assignment: AssignmentModelProtocol {
         json = [String:AnyObject]()
     }
 }
+
+

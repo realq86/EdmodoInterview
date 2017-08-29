@@ -15,7 +15,6 @@ protocol TableCellViewModelProtocol {
 }
 
 extension TableCellViewModelProtocol {
-    
     var placeHolder: String {
         get {
             return "Place_Holder"
@@ -27,7 +26,6 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subTitleLabel: UILabel!
-    
     
     var viewModel:TableCellViewModelProtocol! {
         didSet {

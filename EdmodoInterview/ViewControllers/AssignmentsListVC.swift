@@ -8,46 +8,49 @@
 
 import UIKit
 
-let kTableViewCell = "TableViewCell"
-
 protocol TableViewModelProtocol {
+    var content: String { get }
     var dataBackArray: DataBinder<[TableCellViewModelProtocol]> { get }
-    
     var isLoadingData: DataBinder<Bool> { get }
+    init(dataProvider: EdmodoServer)
     func fetchFreshModel(ifError: @escaping (Bool)->Void)
+    func modelAt(_ index: Int) -> AnyObject?
 }
 
 class AssignmentsListVC: UIViewController {
     
+    let kTableViewCell = "TableViewCell"
+    
     var viewModel:TableViewModelProtocol!
-    
-    fileprivate var tableView:UITableView!
-    fileprivate var dataBackArray:[TableCellViewModelProtocol]!
-    
+    var tableView:UITableView!
+    var dataBackArray:[TableCellViewModelProtocol]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.        
+        
         tableView = self.setupTableView(self)
+        
+        //Data bind to listen to changes to data array
         viewModel.dataBackArray.bind { [unowned self] (cellViewModels) in
             self.dataBackArray = cellViewModels
                 self.tableView.reloadData()
         }
         
-        
+        //Setup ActivityView and listen to viewModel's isLoadingData property.
         let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         activityView.center = view.center
         view.addSubview(activityView)
         viewModel.isLoadingData.bind { (isLoading) in
             isLoading ? activityView.startAnimating() : activityView.stopAnimating()
         }
+        
+        //Call fetch network on 1st load.
         viewModel.fetchFreshModel { [unowned self] (isError) in
             if isError {
                 let alert = UIAlertController(title: "NetworkError", message: nil, preferredStyle: .alert)
                 self.present(alert, animated: true)
             }
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,11 +112,14 @@ extension AssignmentsListVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let assignmentDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AssignmentDetailVC")
+        let assignment = viewModel.modelAt(indexPath.row) as! AssignmentModelProtocol
+        
+        let assignmentDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AssignmentDetailVC") as! AssignmentDetailVC
+        
+        assignmentDetailVC.viewModel = DetailViewModel(dataProvider: EdmodoServer.shared, assignment: assignment)
         
         self.navigationController?.show(assignmentDetailVC, sender: self)
     }
-    
 }
 
 // MARK: Load next page
@@ -122,11 +128,13 @@ extension AssignmentsListVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         if !viewModel.isLoadingData.value {
-            
             let scrollViewContentHeight = tableView.contentSize.height
             let scrollOffsetLevel = scrollViewContentHeight - tableView.bounds.height
             
-            if scrollView.contentOffset.y > scrollOffsetLevel && tableView.isDragging {
+            //Check user scrolling down
+            let isDown = scrollView.panGestureRecognizer.translation(in: scrollView.superview).y < 0
+            
+            if scrollView.contentOffset.y > scrollOffsetLevel && isDown {
                 viewModel.fetchFreshModel { [unowned self] (isError) in
                     if isError {
                         let alert = UIAlertController(title: "NetworkError", message: nil, preferredStyle: .alert)

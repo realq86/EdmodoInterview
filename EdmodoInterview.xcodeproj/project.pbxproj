@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B02FF641F55508500EC03B4 /* SubmissionContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B02FF621F55508500EC03B4 /* SubmissionContentCell.swift */; };
+		8B02FF651F55508500EC03B4 /* SubmissionContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B02FF631F55508500EC03B4 /* SubmissionContentCell.xib */; };
+		8B02FF671F555C3F00EC03B4 /* TableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B02FF661F555C3F00EC03B4 /* TableCellViewModel.swift */; };
 		8B2F50B11F53CC7E00E52CD3 /* AssignmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F50B01F53CC7E00E52CD3 /* AssignmentModel.swift */; };
 		8B2F50B31F53D6A400E52CD3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F50B21F53D6A400E52CD3 /* TableViewCell.xib */; };
 		8B4076441F54E1500069C0E5 /* AssignmentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4076431F54E1500069C0E5 /* AssignmentDetailVC.swift */; };
+		8B8246671F54F56B007514F3 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8246661F54F56B007514F3 /* DetailViewModel.swift */; };
+		8B82466A1F5514CC007514F3 /* SubmissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8246681F5514CC007514F3 /* SubmissionCell.swift */; };
+		8B82466B1F5514CC007514F3 /* SubmissionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8246691F5514CC007514F3 /* SubmissionCell.xib */; };
 		8BBBD25A1F523A30005A7253 /* DataBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD2581F5239BB005A7253 /* DataBinder.swift */; };
 		8BBBD25B1F523A30005A7253 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD2591F5239BB005A7253 /* TableViewModel.swift */; };
 		8BBBD25C1F523A30005A7253 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBD2561F5239B3005A7253 /* TableViewCell.swift */; };
@@ -21,6 +27,7 @@
 		8BDCF44E1F5236E000DF99DE /* EdmodoInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF44D1F5236E000DF99DE /* EdmodoInterviewTests.swift */; };
 		8BDCF4591F5236E000DF99DE /* EdmodoInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF4581F5236E000DF99DE /* EdmodoInterviewUITests.swift */; };
 		8BDCF4711F5237DF00DF99DE /* AssignmentsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDCF4701F5237DE00DF99DE /* AssignmentsListVC.swift */; };
+		8BFD1CFA1F5546BE008329B5 /* SubmissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD1CF91F5546BE008329B5 /* SubmissionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +48,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B02FF621F55508500EC03B4 /* SubmissionContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionContentCell.swift; sourceTree = "<group>"; };
+		8B02FF631F55508500EC03B4 /* SubmissionContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmissionContentCell.xib; sourceTree = "<group>"; };
+		8B02FF661F555C3F00EC03B4 /* TableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellViewModel.swift; sourceTree = "<group>"; };
 		8B2F50B01F53CC7E00E52CD3 /* AssignmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentModel.swift; sourceTree = "<group>"; };
 		8B2F50B21F53D6A400E52CD3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		8B4076431F54E1500069C0E5 /* AssignmentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDetailVC.swift; sourceTree = "<group>"; };
+		8B8246661F54F56B007514F3 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		8B8246681F5514CC007514F3 /* SubmissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionCell.swift; sourceTree = "<group>"; };
+		8B8246691F5514CC007514F3 /* SubmissionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmissionCell.xib; sourceTree = "<group>"; };
 		8BBBD2561F5239B3005A7253 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8BBBD2581F5239BB005A7253 /* DataBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinder.swift; sourceTree = "<group>"; };
 		8BBBD2591F5239BB005A7253 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
@@ -61,6 +74,7 @@
 		8BDCF4581F5236E000DF99DE /* EdmodoInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdmodoInterviewUITests.swift; sourceTree = "<group>"; };
 		8BDCF45A1F5236E000DF99DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BDCF4701F5237DE00DF99DE /* AssignmentsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsListVC.swift; sourceTree = "<group>"; };
+		8BFD1CF91F5546BE008329B5 /* SubmissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B02FF681F555CFE00EC03B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BFD1CF91F5546BE008329B5 /* SubmissionModel.swift */,
+				8B2F50B01F53CC7E00E52CD3 /* AssignmentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B02FF691F555D3000EC03B4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8BBBD25D1F5249CC005A7253 /* EdmodoServer.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		8B4076451F54E1550069C0E5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +133,10 @@
 			children = (
 				8BBBD2561F5239B3005A7253 /* TableViewCell.swift */,
 				8B2F50B21F53D6A400E52CD3 /* TableViewCell.xib */,
+				8B8246681F5514CC007514F3 /* SubmissionCell.swift */,
+				8B8246691F5514CC007514F3 /* SubmissionCell.xib */,
+				8B02FF621F55508500EC03B4 /* SubmissionContentCell.swift */,
+				8B02FF631F55508500EC03B4 /* SubmissionContentCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -111,6 +146,8 @@
 			children = (
 				8BBBD2581F5239BB005A7253 /* DataBinder.swift */,
 				8BBBD2591F5239BB005A7253 /* TableViewModel.swift */,
+				8B8246661F54F56B007514F3 /* DetailViewModel.swift */,
+				8B02FF661F555C3F00EC03B4 /* TableCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -138,8 +175,8 @@
 		8BDCF4371F5236E000DF99DE /* EdmodoInterview */ = {
 			isa = PBXGroup;
 			children = (
-				8BBBD25D1F5249CC005A7253 /* EdmodoServer.swift */,
-				8B2F50B01F53CC7E00E52CD3 /* AssignmentModel.swift */,
+				8B02FF691F555D3000EC03B4 /* Network */,
+				8B02FF681F555CFE00EC03B4 /* Model */,
 				8BBBD2571F5239BB005A7253 /* ViewModels */,
 				8BBBD2551F5239B3005A7253 /* TableViewCells */,
 				8B4076451F54E1550069C0E5 /* ViewControllers */,
@@ -275,6 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BDCF4431F5236E000DF99DE /* LaunchScreen.storyboard in Resources */,
+				8B02FF651F55508500EC03B4 /* SubmissionContentCell.xib in Resources */,
+				8B82466B1F5514CC007514F3 /* SubmissionCell.xib in Resources */,
 				8B2F50B31F53D6A400E52CD3 /* TableViewCell.xib in Resources */,
 				8BDCF4401F5236E000DF99DE /* Assets.xcassets in Resources */,
 				8BDCF43E1F5236E000DF99DE /* Main.storyboard in Resources */,
@@ -303,11 +342,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4076441F54E1500069C0E5 /* AssignmentDetailVC.swift in Sources */,
+				8B82466A1F5514CC007514F3 /* SubmissionCell.swift in Sources */,
 				8BBBD25A1F523A30005A7253 /* DataBinder.swift in Sources */,
 				8BBBD25B1F523A30005A7253 /* TableViewModel.swift in Sources */,
 				8BBBD25C1F523A30005A7253 /* TableViewCell.swift in Sources */,
+				8B02FF641F55508500EC03B4 /* SubmissionContentCell.swift in Sources */,
+				8B8246671F54F56B007514F3 /* DetailViewModel.swift in Sources */,
+				8B02FF671F555C3F00EC03B4 /* TableCellViewModel.swift in Sources */,
 				8BDCF4711F5237DF00DF99DE /* AssignmentsListVC.swift in Sources */,
 				8BBBD25E1F5249CC005A7253 /* EdmodoServer.swift in Sources */,
+				8BFD1CFA1F5546BE008329B5 /* SubmissionModel.swift in Sources */,
 				8B2F50B11F53CC7E00E52CD3 /* AssignmentModel.swift in Sources */,
 				8BDCF4391F5236E000DF99DE /* AppDelegate.swift in Sources */,
 			);

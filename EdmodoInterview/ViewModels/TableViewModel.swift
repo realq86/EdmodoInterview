@@ -11,23 +11,23 @@ import Foundation
 let kMockNetworkDelaySec: Double = 1
 
 class TableViewModel: TableViewModelProtocol {
-    
+    fileprivate var currentPage = 1
     fileprivate var dataProvider: EdmodoServer!
-    var dataBackArray: DataBinder<[TableCellViewModelProtocol]>
     fileprivate var models: [AssignmentModelProtocol]! {
         didSet {
-            var tempArray = [TableCellViewModel]()
+            var tempArray = [TableCellViewModelProtocol]()
             for model in models {
                 tempArray.append(TableCellViewModel(model: model))
             }
             dataBackArray.value = tempArray
         }
     }
+    var content: String = ""
+    var dataBackArray: DataBinder<[TableCellViewModelProtocol]>
     var isLoadingData = DataBinder(value: false)
-    fileprivate var currentPage = 1
     
     //Designated Init
-    init(dataProvider: EdmodoServer) {
+    required init(dataProvider: EdmodoServer) {
         self.dataProvider = dataProvider
         self.dataBackArray = DataBinder(value: [TableCellViewModel]())
         self.models = [AssignmentModelProtocol]()
@@ -49,7 +49,6 @@ class TableViewModel: TableViewModelProtocol {
     func fetchFreshModel(ifError: @escaping (Bool)->Void) {
         
         isLoadingData.value = true
-        
         dataProvider.getAssignments(page: currentPage, perPage: 1) { (assignments, error) in
             DispatchQueue.main.asyncAfter(deadline: .now()+kMockNetworkDelaySec, execute: { [weak self] in
                 if error != nil {
@@ -63,33 +62,14 @@ class TableViewModel: TableViewModelProtocol {
             })
         }
     }
+    
+    func modelAt(_ index: Int) -> AnyObject? {
+        if index < self.models.count {
+            let model = self.models[index]
+            return model as AnyObject
+        }
+        return nil
+    }
 }
 
-protocol AssignmentModelProtocol {
-    var title: String { get }
-    var dueAt: Date { get }
-}
 
-class TableCellViewModel: TableCellViewModelProtocol {
-    
-    var mainText: String {
-        get {
-            return self.model.title
-        }
-    }
-    
-    var subText: String {
-        get {
-            let displayDate = viewDateFormatter.string(from: self.model.dueAt)
-            print("Date description is \(displayDate)")
-            return displayDate
-        }
-    }
-    
-    var model: AssignmentModelProtocol!
-    init(model:AssignmentModelProtocol) {
-        self.model = model
-    }
-    
-    let placeHolder = "PLACEHOLDER"
-}

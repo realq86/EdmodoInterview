@@ -28,5 +28,4 @@ class DataBinder<T> {
         self.onChange = onChange
         self.onChange?(self.value)
     }
-    
 }
