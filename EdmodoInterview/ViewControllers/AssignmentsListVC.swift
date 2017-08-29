@@ -27,12 +27,21 @@ class AssignmentsListVC: UIViewController {
     var tableView:UITableView!
     var dataBackArray:[TableCellViewModelProtocol]!
     
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        super.viewWillAppear(animated)
+//
+//    }
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         title = "Assignments"
         
         tableView = self.setupTableView(self)
+        print(tableView.constraints)
         
         //Data bind to listen to changes to data array
         viewModel.dataBackArray.bind { [unowned self] (cellViewModels) in
@@ -68,10 +77,11 @@ extension AssignmentsListVC {
     
     func setupTableView(_ controller:AssignmentsListVC)->UITableView {
         
-        let tableView = UITableView(frame: controller.view.bounds, style: .plain)
+        let tableView = UITableView(frame: .zero, style: .plain)
         controller.view.addSubview(tableView)
         
         //Full Window Constraints
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         let topConstraint = tableView.topAnchor.constraint(equalTo: controller.view.topAnchor)
         let leftConstraint = tableView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor)
         let bottomConstraint = tableView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor)
@@ -122,19 +132,6 @@ extension AssignmentsListVC: UITableViewDelegate {
     }
 }
 
-extension AssignmentsListVC {
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let assignment = sender as! Assignment
-        
-        let assignmentDetailVC = segue.destination as! SubmissionListVC
-        
-        assignmentDetailVC.viewModel = DetailViewModel(dataProvider: EdmodoServer.shared, assignment: assignment)
-        
-    }
-}
-
 // MARK: Load next page
 extension AssignmentsListVC: UIScrollViewDelegate {
     
@@ -167,5 +164,29 @@ extension AssignmentsListVC: UIScrollViewDelegate {
                 }
             }
         }  
+    }
+}
+
+// MARK: - Add New Assignment
+extension AssignmentsListVC {
+    
+    func addNewAssignment() {
+        
+        
+    }
+    
+}
+
+// MARK: - Navigation
+extension AssignmentsListVC {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let assignment = sender as! Assignment
+        
+        let assignmentDetailVC = segue.destination as! SubmissionListVC
+        
+        assignmentDetailVC.viewModel = DetailViewModel(dataProvider: EdmodoServer.shared, assignment: assignment)
+        
     }
 }
