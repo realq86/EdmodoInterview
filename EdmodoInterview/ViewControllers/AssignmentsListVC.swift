@@ -9,6 +9,7 @@
 import UIKit
 
 protocol TableViewModelProtocol {
+    var title: String { get }
     var content: String { get }
     var dataBackArray: DataBinder<[TableCellViewModelProtocol]> { get }
     var isLoadingData: DataBinder<Bool> { get }
@@ -28,6 +29,8 @@ class AssignmentsListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Assignments"
         
         tableView = self.setupTableView(self)
         
@@ -139,7 +142,7 @@ extension AssignmentsListVC: UIScrollViewDelegate {
         
         if !viewModel.isLoadingData.value {
             let scrollViewContentHeight = tableView.contentSize.height
-            let scrollOffsetLevel = scrollViewContentHeight - tableView.bounds.height
+            let scrollOffsetLevel = scrollViewContentHeight - tableView.bounds.height*0.8
             
             //Check user scrolling down
             let isDown = scrollView.panGestureRecognizer.translation(in: scrollView.superview).y < 0

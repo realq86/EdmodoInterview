@@ -31,6 +31,7 @@ class DetailViewModel: TableViewModelProtocol {
         }
     }
     
+    var title: String = "Submissions"
     var content: String
     
     var dataBackArray: DataBinder<[TableCellViewModelProtocol]>
@@ -44,6 +45,7 @@ class DetailViewModel: TableViewModelProtocol {
         self.creatorID = assignment.creatorID
         self.assignmentID = assignment.id
         self.content = assignment.content
+        self.title = assignment.title
     }
     
     func fetchFreshModel(ifError: @escaping (Bool) -> Void) {

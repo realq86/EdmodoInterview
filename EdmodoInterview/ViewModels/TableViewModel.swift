@@ -22,6 +22,7 @@ class TableViewModel: TableViewModelProtocol {
             dataBackArray.value = tempArray
         }
     }
+    var title: String = "Submissions"
     var content: String = ""
     var dataBackArray: DataBinder<[TableCellViewModelProtocol]>
     var isLoadingData = DataBinder(value: false)

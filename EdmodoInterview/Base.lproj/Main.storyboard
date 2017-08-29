@@ -142,6 +142,8 @@
                             <constraint firstItem="JH0-wj-ajC" firstAttribute="width" secondItem="pAa-Yv-cVU" secondAttribute="width" id="fwH-vM-V4R"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="avatarImageView" destination="zdF-Fm-UxT" id="VH5-F7-zVc"/>
                         <outlet property="contentLabel" destination="pf4-2D-UNl" id="Khm-8z-Hw8"/>

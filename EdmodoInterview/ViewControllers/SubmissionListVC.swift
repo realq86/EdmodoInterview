@@ -16,6 +16,8 @@ class SubmissionListVC: AssignmentsListVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = viewModel.title
+        
         //Setup TableViewCells needed for this VC
         var nib = UINib(nibName: kSubmissionCell, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: kSubmissionCell)
@@ -65,13 +67,20 @@ extension SubmissionListVC {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let submission = viewModel.modelAt(indexPath.row) as? Submission {
-            performSegue(withIdentifier: "SegueToSubmissionDetail", sender: submission)
+        if indexPath.section == 1 {
+            if let submission = viewModel.modelAt(indexPath.row) as? Submission {
+                performSegue(withIdentifier: "SegueToSubmissionDetail", sender: submission)
+            }
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        
         let destination = segue.destination as! SubmissionDetail
         destination.submission = sender as! Submission
+        destination.title = title
     }
 }
