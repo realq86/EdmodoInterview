@@ -10,6 +10,7 @@
 		8B02FF641F55508500EC03B4 /* SubmissionContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B02FF621F55508500EC03B4 /* SubmissionContentCell.swift */; };
 		8B02FF651F55508500EC03B4 /* SubmissionContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B02FF631F55508500EC03B4 /* SubmissionContentCell.xib */; };
 		8B02FF671F555C3F00EC03B4 /* TableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B02FF661F555C3F00EC03B4 /* TableCellViewModel.swift */; };
+		8B02FF6B1F55EBC400EC03B4 /* DetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B02FF6A1F55EBC400EC03B4 /* DetailCellViewModel.swift */; };
 		8B2F50B11F53CC7E00E52CD3 /* AssignmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F50B01F53CC7E00E52CD3 /* AssignmentModel.swift */; };
 		8B2F50B31F53D6A400E52CD3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F50B21F53D6A400E52CD3 /* TableViewCell.xib */; };
 		8B4076441F54E1500069C0E5 /* AssignmentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4076431F54E1500069C0E5 /* AssignmentDetailVC.swift */; };
@@ -51,6 +52,7 @@
 		8B02FF621F55508500EC03B4 /* SubmissionContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionContentCell.swift; sourceTree = "<group>"; };
 		8B02FF631F55508500EC03B4 /* SubmissionContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmissionContentCell.xib; sourceTree = "<group>"; };
 		8B02FF661F555C3F00EC03B4 /* TableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellViewModel.swift; sourceTree = "<group>"; };
+		8B02FF6A1F55EBC400EC03B4 /* DetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellViewModel.swift; sourceTree = "<group>"; };
 		8B2F50B01F53CC7E00E52CD3 /* AssignmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentModel.swift; sourceTree = "<group>"; };
 		8B2F50B21F53D6A400E52CD3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		8B4076431F54E1500069C0E5 /* AssignmentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDetailVC.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				8BBBD2591F5239BB005A7253 /* TableViewModel.swift */,
 				8B8246661F54F56B007514F3 /* DetailViewModel.swift */,
 				8B02FF661F555C3F00EC03B4 /* TableCellViewModel.swift */,
+				8B02FF6A1F55EBC400EC03B4 /* DetailCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				8B8246671F54F56B007514F3 /* DetailViewModel.swift in Sources */,
 				8B02FF671F555C3F00EC03B4 /* TableCellViewModel.swift in Sources */,
 				8BDCF4711F5237DF00DF99DE /* AssignmentsListVC.swift in Sources */,
+				8B02FF6B1F55EBC400EC03B4 /* DetailCellViewModel.swift in Sources */,
 				8BBBD25E1F5249CC005A7253 /* EdmodoServer.swift in Sources */,
 				8BFD1CFA1F5546BE008329B5 /* SubmissionModel.swift in Sources */,
 				8B2F50B11F53CC7E00E52CD3 /* AssignmentModel.swift in Sources */,
