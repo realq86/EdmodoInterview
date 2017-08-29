@@ -47,7 +47,22 @@ class TableViewModel: TableViewModelProtocol {
     }
     
     func fetchFreshModel(ifError: @escaping (Bool)->Void) {
-        
+        isLoadingData.value = true
+        dataProvider.getAssignments(page: 1, perPage: 1) { (assignments, error) in
+            DispatchQueue.main.asyncAfter(deadline: .now()+kMockNetworkDelaySec, execute: { [weak self] in
+                if error != nil {
+                    ifError(true)
+                    return
+                }
+                ifError(false)
+                self?.models = assignments
+                self?.currentPage = 2
+                self?.isLoadingData.value = false
+            })
+        }
+    }
+    
+    func fetchNextPage(ifError: @escaping (Bool)->Void) {
         isLoadingData.value = true
         dataProvider.getAssignments(page: currentPage, perPage: 1) { (assignments, error) in
             DispatchQueue.main.asyncAfter(deadline: .now()+kMockNetworkDelaySec, execute: { [weak self] in

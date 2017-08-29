@@ -14,6 +14,7 @@ protocol TableViewModelProtocol {
     var isLoadingData: DataBinder<Bool> { get }
     init(dataProvider: EdmodoServer)
     func fetchFreshModel(ifError: @escaping (Bool)->Void)
+    func fetchNextPage(ifError: @escaping (Bool)->Void)
     func modelAt(_ index: Int) -> AnyObject?
 }
 
@@ -37,7 +38,7 @@ class AssignmentsListVC: UIViewController {
         }
         
         //Setup ActivityView and listen to viewModel's isLoadingData property.
-        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityView.center = view.center
         view.addSubview(activityView)
         viewModel.isLoadingData.bind { (isLoading) in
@@ -143,7 +144,18 @@ extension AssignmentsListVC: UIScrollViewDelegate {
             //Check user scrolling down
             let isDown = scrollView.panGestureRecognizer.translation(in: scrollView.superview).y < 0
             
+            //Load next page
             if scrollView.contentOffset.y > scrollOffsetLevel && isDown {
+                viewModel.fetchNextPage { [unowned self] (isError) in
+                    if isError {
+                        let alert = UIAlertController(title: "NetworkError", message: nil, preferredStyle: .alert)
+                        self.present(alert, animated: true)
+                    }
+                }
+            }
+            
+            //Pull to refresh
+            if scrollView.contentOffset.y < 0 && !isDown {
                 viewModel.fetchFreshModel { [unowned self] (isError) in
                     if isError {
                         let alert = UIAlertController(title: "NetworkError", message: nil, preferredStyle: .alert)
