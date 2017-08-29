@@ -114,11 +114,20 @@ extension AssignmentsListVC: UITableViewDelegate {
         
         let assignment = viewModel.modelAt(indexPath.row) as! AssignmentModelProtocol
         
-        let assignmentDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AssignmentDetailVC") as! AssignmentDetailVC
+        self.performSegue(withIdentifier: "SegueToSubmission", sender: assignment)
+    }
+}
+
+extension AssignmentsListVC {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let assignment = sender as! Assignment
+        
+        let assignmentDetailVC = segue.destination as! AssignmentDetailVC
         
         assignmentDetailVC.viewModel = DetailViewModel(dataProvider: EdmodoServer.shared, assignment: assignment)
         
-        self.navigationController?.show(assignmentDetailVC, sender: self)
     }
 }
 

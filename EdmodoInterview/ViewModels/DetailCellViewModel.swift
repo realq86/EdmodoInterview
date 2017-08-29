@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SubmissionModelProtocol {
     var firstName: String { get }
