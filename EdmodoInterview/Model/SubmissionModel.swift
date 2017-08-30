@@ -14,27 +14,27 @@ struct Submission: SubmissionModelProtocol {
     
     var creator: [String:AnyObject] {
         get {
-            return json["creator"] as! [String:AnyObject]
+            return json[kJsonCreatorKey] as! [String:AnyObject]
         }
     }
     
     var firstName: String {
         get {
-            return creator["first_name"] as? String ?? "default_firstName"
+            return creator[kJsonFirstNameKey] as? String ?? "default_firstName"
         }
     }
     
     var lastName: String {
         get {
-            return creator["last_name"] as? String ?? "default_lastName"
+            return creator[kJsonLastNamekey] as? String ?? "default_lastName"
         }
     }
     
     var avatar: (small:URL?, large:URL?) {
         get {
-            let avatar = creator["avatars"] as! [String:String]
-            let small = avatar["small"] != nil ? URL(string: avatar["small"]!) : nil
-            let large = avatar["large"] != nil ? URL(string: avatar["large"]!) : nil
+            let avatar = creator[kJsonAvatarKey] as! [String:String]
+            let small = avatar[kJsonSm] != nil ? URL(string: avatar[kJsonSm]!) : nil
+            let large = avatar[kJsonLg] != nil ? URL(string: avatar[kJsonLg]!) : nil
             
             return (small: small, large: large)
         }
@@ -54,7 +54,7 @@ struct Submission: SubmissionModelProtocol {
     
     var submitDate: Date {
         get {
-            if let dateString = json["submitted_at"] as? String, let date = serverDateFormatter.date(from: dateString) {
+            if let dateString = json[kJsonSubmittedAt] as? String, let date = serverDateFormatter.date(from: dateString) {
                 //                print("date is \(date)")
                 return date
             }
@@ -64,7 +64,7 @@ struct Submission: SubmissionModelProtocol {
     
     var content: String {
         get {
-            return json["content"] as? String ?? "default_content"
+            return json[kJsonContent] as? String ?? "default_content"
         }
     }
     

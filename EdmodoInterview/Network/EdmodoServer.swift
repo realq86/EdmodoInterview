@@ -25,13 +25,8 @@ let viewDateFormatter: DateFormatter = {
 }()
 
 class EdmodoServer {
-    
     static let shared = EdmodoServer()
-    
-    fileprivate let urlSession = URLSession.shared
-    fileprivate let getAssignmentURL = "https://api.edmodo.com/assignments?"
-    fileprivate let getSubmissionURL = "https://api.edmodo.com/assignment_submissions?"
-    fileprivate let token = "access_token=12e7eaf1625004b7341b6d681fa3a7c1c551b5300cf7f7f3a02010e99c84695d"
+    fileprivate let urlSession = URLSession.shared //More work to be done to have different session instead of singleton
 }
 
 extension EdmodoServer {
@@ -42,15 +37,15 @@ extension EdmodoServer {
         let page = "page=\(page)"
         let perPage = "per_page=\(perPage)"
         
-        let getURLFinal = URL(string: getAssignmentURL+"&"+page+"&"+perPage+"&"+token)!
+        let getURLFinal = URL(string: kGetAssignmentURL+"&"+page+"&"+perPage+"&"+kToken)!
         
-        print(getAssignmentURL)
+        print(kGetAssignmentURL)
         urlSession.dataTask(with: getURLFinal) { (data, response, error) in
             
             var assignments: [Assignment]!
             
             if error != nil {
-                print("Network type error")
+                print(kGeneralNetowrkErrorMsg)
                 completion(assignments, error)
             }
             do {
@@ -63,11 +58,11 @@ extension EdmodoServer {
                     completion(assignments, nil)
                 }
                 else {
-                    print("json response parse to dictionary error")
+                    print(kDatadownloadErrorMsg)
                 }
             }
             catch {
-                print("json serialization error")
+                print(kJsonSerialErrorMsg)
             }
             }.resume()
     }
@@ -79,17 +74,17 @@ extension EdmodoServer {
         let perPage = "per_page=\(perPage)"
         let assignmentID = "assignment_id=\(id)"
         let assignmentCreator = "assignment_creator_id=\(creator)"
-        let getWithPage = getSubmissionURL + "&" + page + "&" + perPage
-        let withAssignmentID = getWithPage + "&" + assignmentID + "&" + assignmentCreator + "&" + token
+        let getWithPage = kGetSubmissionURL + "&" + page + "&" + perPage
+        let withAssignmentID = getWithPage + "&" + assignmentID + "&" + assignmentCreator + "&" + kToken
         let getURLFinal = URL(string: withAssignmentID)!
         
-        print(getAssignmentURL)
+        print(kGetAssignmentURL)
         urlSession.dataTask(with: getURLFinal) { (data, response, error) in
             
             var assignments: [SubmissionModelProtocol]!
             
             if error != nil {
-                print("Network type error")
+                print(kGeneralNetowrkErrorMsg)
                 completion(assignments, error)
             }
             do {
@@ -102,11 +97,11 @@ extension EdmodoServer {
                     completion(assignments, nil)
                 }
                 else {
-                    print("json response parse to dictionary error")
+                    print(kDatadownloadErrorMsg)
                 }
             }
             catch {
-                print("json serialization error")
+                print(kJsonSerialErrorMsg)
             }
             }.resume()
     }
@@ -126,7 +121,7 @@ extension EdmodoServer {
     }
 }
 
-
+// MARK: - Helper
 fileprivate func createSubmissionModel(responses: AnyObject) -> [Submission] {
     var submissions = [Submission]()
     

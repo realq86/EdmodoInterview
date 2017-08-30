@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol TableCellViewModelProtocol {
+protocol AssigmentCellViewModelProtocol {
     var placeHolder:String { get }
     var mainText: String { get }
     var subText: String { get }
 }
 
-extension TableCellViewModelProtocol {
+extension AssigmentCellViewModelProtocol {
     var placeHolder: String {
         get {
             return "Place_Holder"
@@ -22,12 +22,12 @@ extension TableCellViewModelProtocol {
     }
 }
 
-class TableViewCell: UITableViewCell {
+class AssignmentCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subTitleLabel: UILabel!
     
-    var viewModel:TableCellViewModelProtocol! {
+    var viewModel:AssigmentCellViewModelProtocol! {
         didSet {
             self.titleLabel?.text = viewModel.mainText
             self.subTitleLabel?.text = viewModel.subText
@@ -49,5 +49,4 @@ class TableViewCell: UITableViewCell {
         self.textLabel?.text = ""
         self.detailTextLabel?.text = ""
     }
-
 }

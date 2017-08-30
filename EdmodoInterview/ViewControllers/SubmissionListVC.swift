@@ -69,10 +69,9 @@ extension SubmissionListVC {
         
         if indexPath.section == 1 {
             if let submission = viewModel.modelAt(indexPath.row) as? Submission {
-                performSegue(withIdentifier: "SegueToSubmissionDetail", sender: submission)
+                performSegue(withIdentifier: kSegueIDToSubmissionDetail, sender: submission)
             }
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

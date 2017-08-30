@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-class DetailViewModel: TableViewModelProtocol {
-    
-    
+class DetailViewModel: AssignmentListViewModelProtocol {
     
     convenience required init(dataProvider: EdmodoServer) {
         self.init(dataProvider: EdmodoServer.shared, assignment:Assignment())
@@ -23,9 +21,9 @@ class DetailViewModel: TableViewModelProtocol {
     fileprivate var dataProvider: EdmodoServer!
     fileprivate var models: [SubmissionModelProtocol]! {
         didSet {
-            var tempArray = [TableCellViewModelProtocol]()
+            var tempArray = [AssigmentCellViewModelProtocol]()
             for model in models {
-                tempArray.append(DetailCellViewModel(model: model))
+                tempArray.append(SubmissionCellViewModel(model: model))
             }
             dataBackArray.value = tempArray
         }
@@ -34,19 +32,22 @@ class DetailViewModel: TableViewModelProtocol {
     var title: String = "Submissions"
     var content: String
     
-    var dataBackArray: DataBinder<[TableCellViewModelProtocol]>
+    var dataBackArray: DataBinder<[AssigmentCellViewModelProtocol]>
     var isLoadingData = DataBinder(value: false)
-    
     
     required init(dataProvider: EdmodoServer, assignment: AssignmentModelProtocol) {
         self.dataProvider = dataProvider
-        self.dataBackArray = DataBinder(value: [TableCellViewModelProtocol]())
+        self.dataBackArray = DataBinder(value: [AssigmentCellViewModelProtocol]())
         self.models = [SubmissionModelProtocol]()
         self.creatorID = assignment.creatorID
         self.assignmentID = assignment.id
         self.content = assignment.content
         self.title = assignment.title
     }
+}
+
+// MARK: - Model related methods
+extension DetailViewModel {
     
     func fetchFreshModel(ifError: @escaping (Bool) -> Void) {
         
@@ -91,5 +92,8 @@ class DetailViewModel: TableViewModelProtocol {
         }
         return nil
     }
+    
+    func addModel(_ model: Any) {
+        //TBD
+    }
 }
-

@@ -10,38 +10,43 @@ import Foundation
 
 let kMockNetworkDelaySec: Double = 1
 
-class TableViewModel: TableViewModelProtocol {
+class AssignmentListViewModel: AssignmentListViewModelProtocol {
+    
     fileprivate var currentPage = 1
     fileprivate var dataProvider: EdmodoServer!
     fileprivate var models: [AssignmentModelProtocol]! {
         didSet {
-            var tempArray = [TableCellViewModelProtocol]()
+            var tempArray = [AssigmentCellViewModelProtocol]()
             for model in models {
-                tempArray.append(TableCellViewModel(model: model))
+                tempArray.append(AssignmentCellViewModel(model: model))
             }
             dataBackArray.value = tempArray
         }
     }
     var title: String = "Submissions"
     var content: String = ""
-    var dataBackArray: DataBinder<[TableCellViewModelProtocol]>
+    var dataBackArray: DataBinder<[AssigmentCellViewModelProtocol]>
     var isLoadingData = DataBinder(value: false)
     
     //Designated Init
     required init(dataProvider: EdmodoServer) {
         self.dataProvider = dataProvider
-        self.dataBackArray = DataBinder(value: [TableCellViewModel]())
+        self.dataBackArray = DataBinder(value: [AssignmentCellViewModel]())
         self.models = [AssignmentModelProtocol]()
     }
     
     //Init for mock testing
     convenience init(mockModels: [AssignmentModelProtocol]?) {
         self.init(dataProvider: EdmodoServer())
-        self.dataBackArray = DataBinder(value: [TableCellViewModel]())
+        self.dataBackArray = DataBinder(value: [AssignmentCellViewModel]())
         if let models = models {
             setModel(models)
         }
     }
+}
+
+// MARK: - Model releated work
+extension AssignmentListViewModel {
     
     fileprivate func setModel(_ models: [AssignmentModelProtocol]) {
         self.models = models
@@ -86,6 +91,12 @@ class TableViewModel: TableViewModelProtocol {
         }
         return nil
     }
+    
+    func addModel(_ model: Any) {
+        if let assignment = model as? Assignment {
+            self.models.insert(assignment, at: 0)
+        }
+    }
+    
 }
-
 

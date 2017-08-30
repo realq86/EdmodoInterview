@@ -14,23 +14,23 @@ struct Assignment: AssignmentModelProtocol {
     
     var id: Int {
         get {
-            return json["id"] as? Int ?? 0
+            return json[kJsonID] as? Int ?? 0
         }
     }
     var title: String {
         get {
-            return json["title"] as? String ?? "default_title"
+            return json[kJsonTitle] as? String ?? "default_title"
         }
     }
     var description: String {
         get {
-            return json["description"] as? String ?? "default_description"
+            return json[kJsonDescriptionKey] as? String ?? "default_description"
         }
     }
     var dueAt: Date
     {
         get {
-            if let dateString = json["due_at"] as? String, let date = serverDateFormatter.date(from: dateString) {
+            if let dateString = json[kJsonDueAt] as? String, let date = serverDateFormatter.date(from: dateString) {
 //                print("date is \(date)")
                 return date
             }
@@ -39,19 +39,19 @@ struct Assignment: AssignmentModelProtocol {
     }
     var creator: [String: AnyObject] {
         get {
-            return json["creator"] as? [String:AnyObject] ?? [String:AnyObject]()
+            return json[kJsonCreatorKey] as? [String:AnyObject] ?? [String:AnyObject]()
         }
     }
     
     var creatorID: Int {
         get {
-            return creator["id"] as? Int ?? 0
+            return creator[kJsonID] as? Int ?? 0
         }
     }
     
     var content: String {
         get {
-            return json["description"] as? String ?? "default_description"
+            return json[kJsonDescriptionKey] as? String ?? "default_description"
         }
     }
     
@@ -59,8 +59,19 @@ struct Assignment: AssignmentModelProtocol {
         self.json = json
     }
     
+    init(id: Int, creator: Int, title: String, dueAt: Date, content: String) {
+        
+        var temp = [String:AnyObject]()
+        temp[kJsonID] = NSNumber(integerLiteral: 9999)
+        temp[kJsonCreatorKey] = NSNumber(integerLiteral: 1111)
+        temp[kJsonTitle] = title as NSString
+        temp[kJsonDescriptionKey] = content as NSString
+        temp[kJsonDueAt] = serverDateFormatter.string(from: dueAt) as NSString
+        self.init(json: temp)
+    }
+    
     init() {
-        json = [String:AnyObject]()
+        self.init(id: 0, creator: 0, title: "", dueAt: Date.distantFuture, content: "")
     }
 }
 

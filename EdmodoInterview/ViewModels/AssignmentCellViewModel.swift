@@ -16,7 +16,7 @@ protocol AssignmentModelProtocol {
     var id: Int { get }
 }
 
-class TableCellViewModel: TableCellViewModelProtocol {
+class AssignmentCellViewModel: AssigmentCellViewModelProtocol {
     
     var model: AssignmentModelProtocol!
     let placeHolder = "PLACEHOLDER"

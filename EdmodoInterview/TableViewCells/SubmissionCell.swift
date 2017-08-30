@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SubmissionCellViewModelProtocol: TableCellViewModelProtocol {
+protocol SubmissionCellViewModelProtocol: AssigmentCellViewModelProtocol {
     var firstName: DataBinder<String> { get }
     var lastName: DataBinder<String> { get }
     var avatarSm: DataBinder<UIImage> { get }
@@ -49,5 +49,4 @@ class SubmissionCell: UITableViewCell {
     override func prepareForReuse() {
         avatarImageView.image = #imageLiteral(resourceName: "team-placeholder")
     }
-    
 }

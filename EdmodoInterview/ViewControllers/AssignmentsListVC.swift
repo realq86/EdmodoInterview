@@ -8,31 +8,25 @@
 
 import UIKit
 
-protocol TableViewModelProtocol {
+protocol AssignmentListViewModelProtocol {
     var title: String { get }
     var content: String { get }
-    var dataBackArray: DataBinder<[TableCellViewModelProtocol]> { get }
+    var dataBackArray: DataBinder<[AssigmentCellViewModelProtocol]> { get }
     var isLoadingData: DataBinder<Bool> { get }
     init(dataProvider: EdmodoServer)
     func fetchFreshModel(ifError: @escaping (Bool)->Void)
     func fetchNextPage(ifError: @escaping (Bool)->Void)
     func modelAt(_ index: Int) -> AnyObject?
+    func addModel(_ model:Any)
 }
 
 class AssignmentsListVC: UIViewController {
     
-    let kTableViewCell = "TableViewCell"
+    let kTableViewCell = "AssignmentCell"
     
-    var viewModel:TableViewModelProtocol!
+    var viewModel:AssignmentListViewModelProtocol!
     var tableView:UITableView!
-    var dataBackArray:[TableCellViewModelProtocol]!
-    
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//        super.viewWillAppear(animated)
-//
-//    }
+    var dataBackArray:[AssigmentCellViewModelProtocol]!
     
     override func viewDidLoad() {
         
@@ -41,7 +35,6 @@ class AssignmentsListVC: UIViewController {
         title = "Assignments"
         
         tableView = self.setupTableView(self)
-        print(tableView.constraints)
         
         //Data bind to listen to changes to data array
         viewModel.dataBackArray.bind { [unowned self] (cellViewModels) in
@@ -88,13 +81,13 @@ extension AssignmentsListVC {
         let trailConstraint = tableView.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor)
         NSLayoutConstraint.activate([topConstraint, leftConstraint, bottomConstraint, trailConstraint])
         
+        //Delegate, dataSource, and size setup
         tableView.dataSource = controller
         tableView.delegate = controller
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         let nib = UINib(nibName: kTableViewCell, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: kTableViewCell)
-//        tableView.backgroundColor = .black
         
         return tableView
     }
@@ -112,9 +105,7 @@ extension AssignmentsListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: kTableViewCell, for: indexPath) as! TableViewCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: kTableViewCell, for: indexPath) as! AssignmentCell
         cell.viewModel = dataBackArray[indexPath.row]
         
         return cell
@@ -124,11 +115,9 @@ extension AssignmentsListVC: UITableViewDataSource {
 // MARK: TableView Delegate
 extension AssignmentsListVC: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
         let assignment = viewModel.modelAt(indexPath.row) as! AssignmentModelProtocol
-        
-        self.performSegue(withIdentifier: "SegueToSubmission", sender: assignment)
+        self.performSegue(withIdentifier: kSegueIDToSubmission, sender: assignment)
     }
 }
 
@@ -148,7 +137,7 @@ extension AssignmentsListVC: UIScrollViewDelegate {
             if scrollView.contentOffset.y > scrollOffsetLevel && isDown {
                 viewModel.fetchNextPage { [unowned self] (isError) in
                     if isError {
-                        let alert = UIAlertController(title: "NetworkError", message: nil, preferredStyle: .alert)
+                        let alert = UIAlertController(title: kGeneralNetowrkErrorMsg, message: nil, preferredStyle: .alert)
                         self.present(alert, animated: true)
                     }
                 }
@@ -158,7 +147,7 @@ extension AssignmentsListVC: UIScrollViewDelegate {
             if scrollView.contentOffset.y < 0 && !isDown {
                 viewModel.fetchFreshModel { [unowned self] (isError) in
                     if isError {
-                        let alert = UIAlertController(title: "NetworkError", message: nil, preferredStyle: .alert)
+                        let alert = UIAlertController(title: kGeneralNetowrkErrorMsg, message: nil, preferredStyle: .alert)
                         self.present(alert, animated: true)
                     }
                 }
@@ -168,13 +157,11 @@ extension AssignmentsListVC: UIScrollViewDelegate {
 }
 
 // MARK: - Add New Assignment
-extension AssignmentsListVC {
+extension AssignmentsListVC: NewAssignmentViewControllerDelegate {
     
-    func addNewAssignment() {
-        
-        
+    func userAddedAssignment(_ assignment: Assignment) {
+        viewModel.addModel(assignment)
     }
-    
 }
 
 // MARK: - Navigation
@@ -182,11 +169,15 @@ extension AssignmentsListVC {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let assignment = sender as! Assignment
+        if segue.identifier == kSegueIDPresentNewAssignmentVC {
+            let newAssignmentVC = segue.destination as! NewAssignmentViewController
+            newAssignmentVC.delegate = self
+        }
         
-        let assignmentDetailVC = segue.destination as! SubmissionListVC
-        
-        assignmentDetailVC.viewModel = DetailViewModel(dataProvider: EdmodoServer.shared, assignment: assignment)
-        
+        if segue.identifier == kSegueIDToSubmission {
+            let assignment = sender as! Assignment
+            let assignmentDetailVC = segue.destination as! SubmissionListVC
+            assignmentDetailVC.viewModel = DetailViewModel(dataProvider: EdmodoServer.shared, assignment: assignment)
+        }
     }
 }

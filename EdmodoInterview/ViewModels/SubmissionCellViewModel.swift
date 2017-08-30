@@ -18,7 +18,7 @@ protocol SubmissionModelProtocol {
     var content: String { get }
 }
 
-class DetailCellViewModel: SubmissionCellViewModelProtocol {
+class SubmissionCellViewModel: SubmissionCellViewModelProtocol {
     
     var model: SubmissionModelProtocol!
     var firstName: DataBinder<String>
@@ -65,17 +65,18 @@ class DetailCellViewModel: SubmissionCellViewModelProtocol {
     }
     
     func downloadAvatar() {
-        if !avatarDownloaded {
-            if let url = model.avatarSm {
-                EdmodoServer.shared.downloadImage(with: url, completion: { (image, error) in
-                    if let image = image {
-                        DispatchQueue.main.async { [weak self] in
-                            self?.avatarSm.value = image
-                            self?.avatarDownloaded = true
-                        }
+        if avatarDownloaded {
+            return
+        }
+        if let url = model.avatarSm {
+            EdmodoServer.shared.downloadImage(with: url, completion: { (image, error) in
+                if let image = image {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.avatarSm.value = image
+                        self?.avatarDownloaded = true
                     }
-                })
-            }
+                }
+            })
         }
     }
 }

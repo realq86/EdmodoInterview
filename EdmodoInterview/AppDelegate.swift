@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        rootVC.viewModel = TableViewModel(models: mockModels)
         
         let rootVC = rootNaviVC.viewControllers[0] as! AssignmentsListVC
-        rootVC.viewModel = TableViewModel(dataProvider: EdmodoServer.shared)
+        rootVC.viewModel = AssignmentListViewModel(dataProvider: EdmodoServer.shared)
         
         return true
     }
