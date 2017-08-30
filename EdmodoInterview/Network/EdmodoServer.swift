@@ -115,7 +115,9 @@ extension EdmodoServer {
             }
             if let data = data {
                 let image = UIImage(data: data)
-                completion(image, error)
+                DispatchQueue.global().asyncAfter(deadline: .now()+0.5, execute: {
+                        completion(image, error)
+                })
             }
         }.resume()
     }
