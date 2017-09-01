@@ -1,5 +1,8 @@
 # EdmodoInterview
 
+
+<REQUIRES XCODE 9, SWIFT 4>
+
 Hi Edmodo,
 
 All requirements and optionals have been completed.
