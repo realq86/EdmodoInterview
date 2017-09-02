@@ -60,7 +60,7 @@ extension DetailViewModel {
                     return
                 }
                 ifError(false)
-                self?.models.append(contentsOf: submissions)
+                self?.models = submissions
                 self?.currentPage += 1
                 self?.isLoadingData.value = false
             }
